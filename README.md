@@ -12,7 +12,7 @@ splash/home page).
 ## Programming Langauge
 
 - HTML
-- CSS, SASS
+- CSS, SASS, JS
 - MySQL
 - AJAX, PHP, JSON
 - VUE
