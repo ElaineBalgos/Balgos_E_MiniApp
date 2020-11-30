@@ -1,4 +1,4 @@
-# Favourite Things
+# Mini Cooper - App
 
 ![header image](/img/mcLogo.png "MINI APP")
 <br>Get to know me better by visiting my page. I have created an application to showcase my top three comfort foods.
