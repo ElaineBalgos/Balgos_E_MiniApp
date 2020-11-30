@@ -1,0 +1,19 @@
+.videoWrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.imgButton {
+  box-shadow: $main-box-shadow;
+  border-radius: $main-border-radius;
+}
+
+.descData {
+  background: $main-sec-background;
+  padding: 120px;
+}

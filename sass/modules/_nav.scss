@@ -1,0 +1,27 @@
+#logoCon {
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 60%;
+}
+
+#burgerMenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 8vh;
+  background: $main-color;
+
+  a {
+    text-decoration: none;
+    color: $main-sec-color;
+    font-size: 1.5em;
+
+    &:hover {
+      color: $main-hover-color;
+    }
+  }
+}

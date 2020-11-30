@@ -1,0 +1,144 @@
+           <!-- @click / v-on:click are the same -->
+           <h1 @click="clickHeader">{{ message }}</h1>
+           <p>{{ anotherMessage }}</p>
+   
+           <!-- show the prof data in profs array -->
+           <!-- setting up the template -->
+           <ul>
+               <li v-for="prof, index in professors">
+                   <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
+                   <a href="" class="remove-prof" @click.prevent="showProfData(prof)" v-bind:class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a>
+   
+                   <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a> 
+               </li>
+           </ul>
+           
+           <section class="bio-data" v-bind:class="{'show-bio' : showBioData}">
+               <h1>{{ currentProfData.name }}</h1>
+               <p>{{ currentProfData.nickname }}</p>
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa natus officiis dolore veniam incidunt et ullam. Tempora quam eligendi commodi ipsum laborum? Porro, laudantium exercitationem ratione odit provident mollitia harum pariatur accusamus officiis assumenda facere, quos quam earum minus enim suscipit! Aliquam reprehenderit reiciendis suscipit deleniti obcaecati ex cumque magnam.
+               </p>
+           </section>
+
+
+
+            <!-- <div id="3doorVid">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ajO9OuBt8go?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img src="img/3doorClassic.png" alt=" 2021 Mini Cooper 3 Door">
+                </div>
+                <div id="5doorVid">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zG7enBI4tFQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img src="img/5doorPremier.png" alt=" 2021 Mini Cooper 5 Door">
+                </div>
+                <div id="convertible">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GMtG5HEn5-E?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img src="img/convertiblePremier+.png" alt=" 2021 Mini Cooper Convertible">
+                </div> -->
+
+
+                 <!-- show the prof data in profs array -->
+            <!-- setting up the template -->
+                <ul>
+                    <li v-for="cars, index in carsData">
+                        <p class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Name: {{ cars.Name }}, Description: {{ cars.Description }}, Included: {{ cars.Included }}, Price: {{ cars.Price }}</p>
+                        <!-- <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a> -->
+
+                        <!-- <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>  -->
+                    </li>
+                </ul>
+
+
+               <!-- show the prof data in profs array -->
+            <!-- setting up the template -->
+            <ul>
+                <li v-for="cars, index in carsData">
+                   
+                    <!-- <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a> -->
+
+                    <!-- <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>  -->
+
+                    <a href="" class="showData" @click.prevent="loadCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                        <img src="img/3doorClassic.png" alt=" 2021 Mini Cooper 3 Door">
+                    </a>
+                    <a href="" class="showData" @click.prevent="loadCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                        <img src="img/5doorPremier.png" alt=" 2021 Mini Cooper 5 Door">
+                    </a>
+                    <a href="" class="showData" @click.prevent="loadCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                        <img src="img/convertiblePremier+.png" alt=" 2021 Mini Cooper Convertible">
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Click button Section -->
+            <section class="showDesc" v-bind:class="{'show-desc' : showDescData}">
+                <h1>Name: {{ cars.Name }}</h1>
+                <p>Description: {{ cars.Description }}</p>
+                <p>Included: {{ cars.Included }}</p>
+                <p>Price: {{ cars.Price }}</p>
+            </section>
+
+
+
+
+
+            <!-- Click button Section -->
+            <section class="imageWrapper">
+                <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                    <img src="img/3doorClassic.png" alt=" 2021 Mini Cooper 3 Door">
+                </a>
+                <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                    <img src="img/5doorPremier.png" alt=" 2021 Mini Cooper 5 Door">
+                </a>
+                <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">
+                    <img src="img/convertiblePremier+.png" alt=" 2021 Mini Cooper Convertible">
+                </a>
+            </section>
+
+            <!-- show the prof data in profs array -->
+            <!-- setting up the template -->
+                <ul>
+                    <li v-for="cars, index in carsData">
+                        <h1>Name: {{ cars.Name }}</h1>
+                        <p class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Description: {{ cars.Description }}</p>
+                        <p class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Included: {{ cars.Included }}</p>
+                        <p class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Price: {{ cars.Price }}</p>
+
+                        <!-- <a href="" class="showData" @click.prevent="showCarsData(cars)" v-bind:class="{'cars-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a> -->
+
+                        <!-- <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>  -->
+                    </li>
+                </ul>
+
+
+
+                <ul>
+                <!-- this is a custom components in main.js -->
+                <cars-temp v-for="cars in carsData" :cars="cars" :key="cars.id"></cars-temp>
+            </ul>
+
+
+
+             <a href="" class="remove-prof" @click.prevent="showDescData(cars)" :class="{'cars-button-modifier' : showAformat}">
+                    <img class="imgButton" src="img/3doorClassic.png" alt=" 2021 Mini Cooper 3 Door">
+                </a>
+                <a href="">
+                    <img class="imgButton" src="img/5doorPremier.png" alt=" 2021 Mini Cooper 5 Door">
+                </a>
+                <a href="">
+                    <img class="imgButton" src="img/convertiblePremier+.png" alt=" 2021 Mini Cooper Convertible">
+                </a>
+
+
+                   <section class="imageWrapper" v-for="cars in carsData">
+                <a href="">
+                    <img class="imgButton" :src='"img/"+cars.Image' alt=" 2021 Mini Cooper">
+                </a>
+            </section>
+
+
+               <section class="imageWrapper" v-for="cars in carsData">
+                <a href="">
+                    <img class="imgButton" :src='"img/"+cars.Image' alt=" 2021 Mini Cooper">
+                </a>
+            </section>
