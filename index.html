@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Cooper App</title>
+
+    <!--  CSS  -->
+    <link rel="stylesheet" href="css/master.css">
+    
+    <!-- Link from vuejs.org -->
+    <!-- CDN for prototype / learning purposes -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <h1 class="hidden">Mini Cooper App</h1>
+    <div class="siteContainer">
+        <header id="mainHeader">
+            <h2 class="hidden">Main Navigation</h2>
+
+            <!--  Logo  -->
+            <div id="logoCon">
+            	<img class="logo" src="img/mcLogo.png" alt="Mini Cooper Logo" id="mcLogo">
+            </div>
+
+            <!--  Nav Dropdown  -->
+            
+            <nav id="burgerCon">
+                <!-- <i class="fas fa-bars">X</i> -->
+                <ul id="burgerMenu">
+                    <li><a href="#">Models</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Owners</a></li>
+                    <li><a href="#">Pre-Owned</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main id="app">
+            <h2 class="hidden">hero</h2>
+            <!-- Video Section -->
+            <section class="videoWrapper" v-for="cars, index in carsData">
+                <video width="100%" controls>
+                    <source :src='"vid/" + cars.Video' type="video/mp4">
+                </video>
+            </section>
+            
+             <!-- Click button Section -->
+             <section class="imageWrapper" v-for="cars in carsData">
+                <a href="" class="desc-data" @click.prevent="loadCarsData(cars)"  
+                v-bind:class="{'cars-button-modifier': removeAformat}">
+                    <img class="imgButton" :src='"img/"+cars.Image' alt=" 2021 Mini Cooper"
+                    v-on:click="logClicked">
+                </a>
+            </section>
+            
+            <section class="descData" v-bind:class="{'desc-data' : showDescData}">
+                <h1>NAME: {{ carsData.Name }}</h1>
+                <p>DESCRIPTION: {{ carsData.Description }}</p>
+                <p>INLCUDED:{{ carsData.Included }}</p>
+                <p>PRICE{{ carsData.Price }}</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit optio qui commodi molestias animi voluptatem, perspiciatis facilis nemo libero ducimus debitis beatae? Inventore, reiciendis voluptatum!</p>
+            </section>
+       </main>
+
+       <footer>&copy;2020 MINI COOPER CANADA</footer>
+    </div>
+</body>
+<script src="js/main.js" type="module"></script>
+</html>
