@@ -10,12 +10,9 @@ import carsTemplate from "./components/carsTemplate.js";
         data: {
             // message: "Hello from Vue!",
             // anotherMessage: "more text, so simple! much winning",
-            removeAformat: true,
+            // removeAformat: true,
             showDescData: false,
-            carsData: [],
-
-            currentCarsData: {}
-
+            carsData: []
         },
         // This is the "mounted" lifecycle hook. Vue is done creating and has attached itself to the "app" div on the page
         mounted: function() {
@@ -48,16 +45,26 @@ import carsTemplate from "./components/carsTemplate.js";
             //     console.log("clicked on a Header");
             // },
 
-            loadCarsData(target) {
+            showCarsData(target) {
                 // show cars in carsData array
                 console.log('clicked to show data', target, target.name);
+                
                 // the "this" keyword inside a vue instance REFERS to the Vue instance itself by default
 
                 // toggle the property between true and false using a ternary statement
-                this.loadCarsData = this.loadCarsData ? false : true
+                this.showCarsData = this.showCarsData ? false : true
                 this.currentCarsData = target;
+            },
+
+            loadInfo() {
+                console.log("loadInfo", this.cars);
+
             }
         },
+
+        components: {
+            "cars-temp": carsTemplate
+        }
        
     }).$mount("#app"); // also connects Vue to your wrapper in HTML
 })();

@@ -1,7 +1,7 @@
 export default {
     name: "carsTemplate",
 
-    props: ["carsDataTemplate"],
+    props: ["cars"],
 
     // the data needs to be function inside a components
     data: function() {
@@ -14,23 +14,9 @@ export default {
     },
     
     template: 
-    `<li>
-        <a @click.prevent="doSomething" href="" class="remove-prof" >
-            <img :src="'img/' + cars.Image" :alt='cars.Name + "Image"'>
-        </a>
-
-
-        <a href="">
-            <img class="imgButton" src="img/3doorClassic.png" alt=" 2021 Mini Cooper 3 Door">
-        </a>
-        <a href="">
-            <img class="imgButton" src="img/5doorPremier.png" alt=" 2021 Mini Cooper 5 Door">
-        </a>
-        <a href="">
-            <img class="imgButton" src="img/convertiblePremier+.png" alt=" 2021 Mini Cooper Convertible">
-        </a>
-
-    </li>`,
+    `<a href="">
+    <img class="imgButton" :src='"img/"+cars.Image' alt=" 2021 Mini Cooper" v-on:click="logClicked">
+    </a>`,
     
     created: function() {
         console.log(`loaded ${this.cars.Name} card`); 
@@ -39,6 +25,7 @@ export default {
     methods: {
         logClicked() {
             console.log(`fired from ${this.cars.Name}'s card`);
+            this.$emit("loadminiData", this.cars)
         },
 
         doSomething() {

@@ -47,15 +47,9 @@
             </section>
             
              <!-- Click button Section -->
-             <section class="imageWrapper" v-for="cars in carsData">
-                <a href="" class="desc-data" @click.prevent="loadCarsData(cars)"  
-                v-bind:class="{'cars-button-modifier': removeAformat}">
-                    <img class="imgButton" :src='"img/"+cars.Image' alt=" 2021 Mini Cooper"
-                    v-on:click="logClicked">
-                </a>
-            </section>
+            <cars-temp @loadminiData="showCarsData" v-for="cars in carsData" :cars="cars" :key="cars.id"></cars-temp>
             
-            <section class="descData" v-bind:class="{'desc-data' : showDescData}">
+            <section class="descData" v-bind:class="{'desc-data' : loadInfo}">
                 <h1>NAME: {{ carsData.Name }}</h1>
                 <p>DESCRIPTION: {{ carsData.Description }}</p>
                 <p>INLCUDED:{{ carsData.Included }}</p>
